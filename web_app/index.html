@@ -1,1 +1,21 @@
-/static/js/navigation.json
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../static/global.css"/>
+	<title>Campus Election</title>
+</head>
+<body>
+	<div>
+	</div>
+</body>
+</html>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script>
+	d3.json("static/js/navigation.json", function(error, nav) {
+		if (error) return console.error(error);
+		console.log(nav);
+	});
+</script>
