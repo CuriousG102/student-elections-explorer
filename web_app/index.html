@@ -54,7 +54,7 @@
 					<h3>Name</h3>
 					<h5>Position</h5>
 				</div>
-			
+
 			</div>
 		</div>
 	</div>
@@ -64,7 +64,7 @@
 			<h2 class="toggle-title" data-toggle="collapse" data-target="#viewTSM">Texas Student Media</h2>
 			<div class="collapse" id="viewTSM">
 				<div class="container">
-					<h3 class="" data-toggle="collapse" data-target="#viewA">SubCat1</h3>
+					<h3 class="toggle-sub" data-toggle="collapse" data-target="#viewA">SubCat1</h3>
 					<div class="collapse row" id="viewA">
 						<div class="content col-md-2 col-sm-4">
 							<img src="static/portrait.jpg" />
@@ -74,7 +74,7 @@
 					</div>
 				</div>
 				<div class="container">
-					<h3 class="" data-toggle="collapse" data-target="#viewB">SubCat2</h3>
+					<h3 class="toggle-sub" data-toggle="collapse" data-target="#viewB">SubCat2</h3>
 					<div class="collapse row" id="viewB">
 						<div class="content col-md-2 col-sm-4">
 							<img src="static/portrait.jpg" />
@@ -157,7 +157,24 @@
 				log: function() { }
 			};
 		}
-	});
+
+		    // run test on initial page load
+		    checkSize();
+
+		    // run test on resize of the window
+		    $(window).resize(checkSize);
+		});
+
+	//Function to the css rule
+	function checkSize(){
+		// if ($(".navbar").css("top") == "0px" ){
+		// 	$(".navbar").addClass("navbar-inverse");
+		// }
+		// else {
+		// 	$(".navbar").removeClass("navbar-inverse");
+		// }
+	}
+
 
 	d3.json("static/js/navigation.json", function(error, nav) {
 		if (error) return console.error(error);
